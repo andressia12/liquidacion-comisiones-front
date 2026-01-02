@@ -1,0 +1,4 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <input type="number" formControlName="monto" placeholder="Monto" />
+  <button type="submit" [disabled]="formGroup.invalid">Crear</button>
+</form>

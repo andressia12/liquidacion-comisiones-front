@@ -1,0 +1,16 @@
+<app-transaccion-form></app-transaccion-form>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Monto</th>
+    <th>Comisión</th>
+    <th>Fecha</th>
+  </tr>
+  <tr *ngFor="let tx of transactions$ | async">
+    <td>{{ tx.id }}</td>
+    <td>{{ tx.monto }}</td>
+    <td>{{ tx.comision }}</td>
+    <td>{{ tx.fecha }}</td>
+  </tr>
+</table>
