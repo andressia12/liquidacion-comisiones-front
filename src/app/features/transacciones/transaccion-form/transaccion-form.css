@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.tx-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.field-instruction {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 4px;
+}

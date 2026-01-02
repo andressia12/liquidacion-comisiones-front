@@ -15,8 +15,6 @@ export class TransaccionService {
   }
 
   crear(monto: number): Observable<Transaccion> {
-    console.log('MONTO', monto);
-
     return this.http.post<Transaccion>(this.apiUrl, { monto });
   }
 }

@@ -1,4 +1,24 @@
-<form [formGroup]="formGroup" (ngSubmit)="submit()">
-  <input type="number" formControlName="monto" placeholder="Monto" />
-  <button type="submit" [disabled]="formGroup.invalid">Crear</button>
-</form>
+<mat-card>
+  <form [formGroup]="formGroup" (ngSubmit)="submit()" class="tx-form">
+    <div class="field-instruction">Digite el valor de la transacción</div>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Monto</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="monto"
+        placeholder="Ingrese el valor de la transacción"
+      />
+      <mat-error *ngIf="formGroup.get('monto')?.hasError('required')">Monto requerido</mat-error>
+      <mat-error *ngIf="formGroup.get('monto')?.hasError('min')">Monto inválido</mat-error>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="formGroup.invalid">
+        Crear Transacción
+      </button>
+      <button mat-stroked-button type="button" (click)="formGroup.reset()">Limpiar</button>
+    </div>
+    <br />
+  </form>
+</mat-card>

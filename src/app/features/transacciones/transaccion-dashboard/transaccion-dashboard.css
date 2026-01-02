@@ -1,0 +1,26 @@
+.tx-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.tx-header .subtitle {
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 4px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.loading {
+  padding: 16px;
+  text-align: center;
+}
+
+.mat-elevation-z8 {
+  overflow: auto;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -3,11 +3,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TransaccionService } from '../../../core/services/transaccion.service';
 import { CommonModule } from '@angular/common';
 import { Transaccion } from '../../../models/transaccion.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-transaccion-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './transaccion-form.html',
   styleUrl: './transaccion-form.css',
 })
@@ -25,9 +29,6 @@ export class TransaccionForm implements OnInit {
   submit(): void {
     if (this.formGroup.valid) {
       this.service.crear(this.formGroup.value.monto).subscribe();
-      // this.service.crear(this.formGroup.value.monto).subscribe((tx) => {
-      //   this.transacciones.push(tx);
-      // });
       this.formGroup.reset();
     }
   }
