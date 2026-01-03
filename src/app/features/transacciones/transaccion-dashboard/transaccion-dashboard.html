@@ -5,8 +5,7 @@
 <app-transaccion-form></app-transaccion-form>
 
 <mat-card>
-  @if (transactions$ | async; as transactions) {
-  <div>
+  <div *ngIf="transactions$ | async as transactions; else loading">
     <table mat-table [dataSource]="transactions" class="mat-elevation-z8 full-width">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -38,7 +37,7 @@
       <tr mat-row *matRowDef="let row; columns: ['id', 'monto', 'comision', 'fecha']"></tr>
     </table>
   </div>
-  } @else {
-  <div class="loading">Cargando transacciones...</div>
-  }
+  <ng-template #loading>
+    <div class="loading">Cargando transacciones...</div>
+  </ng-template>
 </mat-card>
